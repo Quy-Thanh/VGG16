@@ -26,6 +26,10 @@ If you would like to contribute to this project, follow the steps below:
 
 ## Directory structure
 
+├── Data/
+
+├── Model/
+
 ├── LICENSE
 
 └── README.md
