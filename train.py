@@ -88,4 +88,5 @@ def trainning(data_dir, output_file):
 if __name__ == "__main__":
 	data_dir = "data/"
 	output_file = "models/savedmodels/version1.keras"
+	os.makedirs("models/savedmodels/", exist_ok=True)  		# Create the folder if it doesn't already exist
 	trainning(data_dir, output_file)
