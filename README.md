@@ -34,7 +34,7 @@ If you would like to contribute to this project, follow the steps below:
 
 └── README.md
 
-##Data
+## Data
 
 - [Cucumber Disease Recognition Dataset](https://data.mendeley.com/datasets/y6d3z6f8z9/1)
 - Published: 29 November 202|Version 1|DOI:10.17632/y6d3z6f8z9.1
