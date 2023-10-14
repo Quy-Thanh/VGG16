@@ -34,10 +34,17 @@ If you would like to contribute to this project, follow the steps below:
 
 └── README.md
 
+##Data
+
+- [Cucumber Disease Recognition Dataset](https://data.mendeley.com/datasets/y6d3z6f8z9/1)
+- Published: 29 November 202|Version 1|DOI:10.17632/y6d3z6f8z9.1
+- Contributors: Nusrat Sultana, Sumaita Binte Shorif, Morium Akter, Mohammad Shorif Uddin
+- License: [CC BY 4.0 DEED](https://creativecommons.org/licenses/by/4.0/)
+
 ## Contributors
 
 - [@Quy-Thanh](https://github.com/Quy-Thanh)
 
 ## License
 
-This project is licensed under the MIT License.
+- This project is licensed under the MIT License.
