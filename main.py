@@ -38,4 +38,4 @@ predicted_class = np.argmax(y_pred)
 
 
 # Result
-print("result: {}".format(os.listdir("data/")[predicted_class - 1]))
+print("result: {}".format(os.listdir("data/")[predicted_class]))
