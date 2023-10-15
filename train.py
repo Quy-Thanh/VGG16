@@ -10,8 +10,8 @@ from sklearn.model_selection import train_test_split
 
 def trainning(data_dir, output_file):
 	# Prepare training data
-	data = [] # List of saved data
-	labels = [] # List of stored corresponding labels
+	data = [] 														# List of saved data
+	labels = [] 													# List of stored corresponding labels
 
 	# Loop through all folders in the root directory
 	for class_name in os.listdir(data_dir):
@@ -87,5 +87,7 @@ def trainning(data_dir, output_file):
 
 if __name__ == "__main__":
 	data_dir = "data/"
-	output_file = "models/savedmodels/version1.keras"
-	trainning(data_dir, output_file)
+	output_dir = "models/savedmodels/"
+	os.makedirs(output_dir, exist_ok=True)  			# Create the folder if it doesn't already exist
+	output_path = os.path.join(output_dir, "version1.keras")
+	trainning(data_dir, output_path)
