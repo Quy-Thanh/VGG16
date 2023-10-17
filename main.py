@@ -1,5 +1,5 @@
 """
-Project: Use VGG16 to predict the something
+Project: Use VGG16 model to predict common diseases on cucumber plants
 
 Target:
 - Predict some common diseases of cucumber plants
@@ -11,9 +11,9 @@ Limit:
 					 Gummy Stem Blight, Pythium Fruit Rot 
 
 Technology used:
-- Libraries: Keras
+- Libraries: Keras, TensorFlow, Scikit-Learn, OpenCV, Numpy
 
-Author: To Quy Thanh
+Author: To Quy Thanh, Dang Sy Vinh, Nguyen Van Hiep
 Email: Tothanh1feb3.quinn@gamil.com
 
 Note: This is an initial version of the project and may be expanded in the future.
