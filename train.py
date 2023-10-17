@@ -49,16 +49,45 @@ def trainning(data_dir, output_file):
 	# Divide the data into training set and test set
 	train_data, val_data, train_labels, val_labels = train_test_split(data, one_hot_labels, test_size=0.2, random_state=42)
 
-	# Build the model
-	model = tf.keras.Sequential([
-	    layers.Input(shape=(224, 224, 3)),  			# Input with 224 x 224 size and 3 color channels (RGB)
-	    layers.Conv2D(64, (3, 3), activation='relu'),
+	# VGG16-like model with 5 blocks
+	model = keras.Sequential([
+	    layers.Input(shape=(224, 224, 3)),   # Input with 224x224 size and 3 color channels (RGB)
+	    
+	    # Block 1
+	    layers.Conv2D(64, (3, 3), activation='relu', padding='same'),
+	    layers.Conv2D(64, (3, 3), activation='relu', padding='same'),
 	    layers.MaxPooling2D((2, 2)),
-	    layers.Conv2D(128, (3, 3), activation='relu'),
+	    
+	    # Block 2
+	    layers.Conv2D(128, (3, 3), activation='relu', padding='same'),
+	    layers.Conv2D(128, (3, 3), activation='relu', padding='same'),
 	    layers.MaxPooling2D((2, 2)),
+	    
+	    # Block 3
+	    layers.Conv2D(256, (3, 3), activation='relu', padding='same'),
+	    layers.Conv2D(256, (3, 3), activation='relu', padding='same'),
+	    layers.Conv2D(256, (3, 3), activation='relu', padding='same'),
+	    layers.MaxPooling2D((2, 2)),
+	    
+	    # Block 4
+	    layers.Conv2D(512, (3, 3), activation='relu', padding='same'),
+	    layers.Conv2D(512, (3, 3), activation='relu', padding='same'),
+	    layers.Conv2D(512, (3, 3), activation='relu', padding='same'),
+	    layers.MaxPooling2D((2, 2)),
+	    
+	    # Block 5
+	    layers.Conv2D(512, (3, 3), activation='relu', padding='same'),
+	    layers.Conv2D(512, (3, 3), activation='relu', padding='same'),
+	    layers.Conv2D(512, (3, 3), activation='relu', padding='same'),
+	    layers.MaxPooling2D((2, 2)),
+	    
+	    # Flatten
 	    layers.Flatten(),
-	    layers.Dense(128, activation='relu'),
-	    layers.Dense(8, activation='softmax') 			# 8 output layers (number of layers corresponds to number of diseases)
+	    
+	    # Fully connected layers
+	    layers.Dense(4096, activation='relu'),
+	    layers.Dense(4096, activation='relu'),
+	    layers.Dense(8, activation='softmax')  # 8 output layers (number of diseases)
 	])
 
 	# Define ModelCheckpoint callback
